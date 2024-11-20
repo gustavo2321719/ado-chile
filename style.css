@@ -1,0 +1,85 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Contenedor principal */
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px; /* Reducir el padding */
+    margin: 0 20px; /* Reducir el margen */
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    width: 90%; /* Ajustar ancho para dispositivos pequeños */
+    max-width: 500px; /* Máximo tamaño */
+}
+
+/* Título principal */
+h1 {
+    font-size: 2rem; /* Reducir tamaño */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffcc70;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Contenedor de la cuenta regresiva */
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Reducir el espacio entre bloques */
+}
+
+/* Bloques de tiempo */
+.time-block {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px; /* Reducir padding */
+    border-radius: 10px;
+    width: 70px; /* Reducir ancho */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Número grande en los bloques */
+.time-block span {
+    font-size: 2rem; /* Reducir tamaño */
+    font-weight: bold;
+    color: #ffcc70;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+/* Texto descriptivo debajo de los números */
+.time-block p {
+    margin: 0;
+    font-size: 0.8rem; /* Reducir tamaño */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Contenedor de imágenes */
+.ado {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las imágenes se reorganicen en filas */
+    justify-content: center;
+    gap: 10px; /* Espaciado entre imágenes */
+    padding-top: 20px; /* Reducir espacio superior */
+}
+
+/* Imágenes */
+img {
+    width: 90px; /* Reducir ancho */
+    height: 90px; /* Reducir altura */
+    border-radius: 5px; /* Agregar bordes redondeados */
+}
