@@ -30,36 +30,85 @@ function updateCountdown() {
     COUNTDOWN_ELEMENTS.seconds.textContent = padZero(seconds);
 }
 
-// Optimize performance with requestAnimationFrame and fallback
+// Optimize performance with requestAnimationFrame
 function startCountdown() {
     updateCountdown();
-    if (window.requestAnimationFrame) {
-        requestAnimationFrame(startCountdown);
-    } else {
-        // Fallback for older browsers
-        setTimeout(startCountdown, 1000);
-    }
+    requestAnimationFrame(startCountdown);
 }
 
-let audio = document.getElementById("audio1");
-let isPlaying = false;
-
-// Improved event handling for mobile and desktop
-document.addEventListener('click', function(event) {
-    // Prevent multiple triggering
-    if (event.target === audio) return;
+// Audio autoplay and control functionality
+function setupAudioControls() {
+    const audio = document.getElementById("audio1");
     
-    if (!isPlaying) {
-        audio.play().catch(e => {
-            // Handle autoplay restrictions
-            console.log("Autoplay prevented", e);
-        });
-        isPlaying = true;
-    } else {
-        audio.pause();
-        isPlaying = false;
-    }
-});
+    // Create play/pause button
+    function createAudioControlButton() {
+        const controlButton = document.createElement('button');
+        controlButton.innerHTML = '🎵 Reproducir Música';
+        controlButton.style.position = 'fixed';
+        controlButton.style.bottom = '10px';
+        controlButton.style.left = '10px';
+        controlButton.style.zIndex = '1000';
+        controlButton.style.padding = '10px';
+        controlButton.style.backgroundColor = '#4e54c8';
+        controlButton.style.color = 'white';
+        controlButton.style.border = 'none';
+        controlButton.style.borderRadius = '5px';
+        controlButton.style.cursor = 'pointer';
+        controlButton.style.display = 'flex';
+        controlButton.style.alignItems = 'center';
+        controlButton.style.gap = '5px';
 
-// Start countdown
-startCountdown();
+        let isPlaying = false;
+
+        controlButton.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                controlButton.innerHTML = '🎵 Reproducir Música';
+                isPlaying = false;
+            } else {
+                audio.play()
+                    .then(() => {
+                        controlButton.innerHTML = '⏸ Pausar Música';
+                        isPlaying = true;
+                    })
+                    .catch((error) => {
+                        console.log("Error playing audio:", error);
+                    });
+            }
+        });
+
+        document.body.appendChild(controlButton);
+    }
+
+    // Function to attempt playing audio
+    function tryPlayAudio() {
+        if (audio) {
+            audio.play()
+                .then(() => {
+                    console.log("Audio started playing automatically");
+                })
+                .catch((error) => {
+                    console.log("Autoplay was prevented:", error);
+                });
+        }
+    }
+
+    // Try to play audio when the page loads
+    window.addEventListener('load', () => {
+        tryPlayAudio();
+        createAudioControlButton();
+    });
+
+    // Add loop and preload attributes
+    audio.loop = true;
+    audio.preload = 'auto';
+}
+
+// Initialize everything
+function init() {
+    startCountdown();
+    setupAudioControls();
+}
+
+// Call initialization when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', init);
