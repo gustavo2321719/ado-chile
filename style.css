@@ -1,85 +1,114 @@
-/* Estilo general del cuerpo */
+:root {
+    --primary-gradient-start: #4e54c8;
+    --primary-gradient-end: #8f94fb;
+    --highlight-color: #ffcc70;
+    --text-color: #ffffff;
+    --background-overlay: rgba(0, 0, 0, 0.7);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #4e54c8, #8f94fb);
-    color: #ffffff;
-    margin: 0;
+    background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
 }
 
-/* Contenedor principal */
 .container {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px; /* Reducir el padding */
-    margin: 0 20px; /* Reducir el margen */
+    background: var(--background-overlay);
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-    width: 90%; /* Ajustar ancho para dispositivos pequeños */
-    max-width: 500px; /* Máximo tamaño */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
 }
 
-/* Título principal */
 h1 {
-    font-size: 1.7rem; /* Reducir tamaño */
+    font-size: 1.5rem;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #ffcc70;
+    color: var(--highlight-color);
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
-/* Contenedor de la cuenta regresiva */
 #countdown {
     display: flex;
     justify-content: center;
-    gap: 10px; /* Reducir el espacio entre bloques */
+    gap: 10px;
 }
 
-/* Bloques de tiempo */
 .time-block {
-    text-align: center;
     background: rgba(255, 255, 255, 0.1);
-    padding: 10px; /* Reducir padding */
+    padding: 10px;
     border-radius: 10px;
-    width: 70px; /* Reducir ancho */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    width: 80px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Número grande en los bloques */
 .time-block span {
-    font-size: 1.7rem; /* Reducir tamaño */
+    font-size: 1.7rem;
     font-weight: bold;
-    color: #ffcc70;
+    color: var(--highlight-color);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     display: block;
 }
 
-/* Texto descriptivo debajo de los números */
 .time-block p {
-    margin: 0;
-    font-size: 0.6rem; /* Reducir tamaño */
+    margin-top: 6px;
+    font-size: 0.6rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: 0.8;
 }
 
-/* Contenedor de imágenes */
 .ado {
     display: flex;
-    flex-wrap: wrap; /* Permitir que las imágenes se reorganicen en filas */
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px; /* Espaciado entre imágenes */
-    padding-top: 20px; /* Reducir espacio superior */
+    gap: 10px;
+    padding-top: 20px;
 }
 
-/* Imágenes */
-img {
-    width: 90px; /* Reducir ancho */
-    height: 90px; /* Reducir altura */
-    border-radius: 5px; /* Agregar bordes redondeados */
+.ado img {
+    width: 90px;
+    height: 90px;
+    border-radius: 5px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ado img:hover {
+    transform: scale(1.1);
+}
+
+audio{
+    position: absolute;
+    left: 1px;
+    bottom: 1px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+    
+    .time-block {
+        width: 60px;
+    }
+    
+    .time-block span {
+        font-size: 1.4rem;
+    }
 }
