@@ -24,7 +24,7 @@ body {
 
 /* Título principal */
 h1 {
-    font-size: 2rem; /* Reducir tamaño */
+    font-size: 1.7rem; /* Reducir tamaño */
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -51,7 +51,7 @@ h1 {
 
 /* Número grande en los bloques */
 .time-block span {
-    font-size: 2rem; /* Reducir tamaño */
+    font-size: 1.7rem; /* Reducir tamaño */
     font-weight: bold;
     color: #ffcc70;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -61,7 +61,7 @@ h1 {
 /* Texto descriptivo debajo de los números */
 .time-block p {
     margin: 0;
-    font-size: 0.8rem; /* Reducir tamaño */
+    font-size: 0.6rem; /* Reducir tamaño */
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;

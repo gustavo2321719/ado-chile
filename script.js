@@ -22,3 +22,7 @@ function updateCountdown() {
 }
 
 setInterval(updateCountdown, 1000);
+
+function PlayAudio(){
+  document.getElementById("audio1").play();
+}
