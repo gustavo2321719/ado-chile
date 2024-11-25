@@ -12,6 +12,10 @@
     padding: 0;
 }
 
+html {
+    font-size: 16px; /* Base font size for responsive typography */
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
@@ -21,20 +25,22 @@ body {
     align-items: center;
     min-height: 100vh;
     text-align: center;
+    margin: 0;
+    padding: 1rem;
 }
 
 .container {
     background: var(--background-overlay);
-    padding: 20px;
+    padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    width: 90%;
+    width: 100%;
     max-width: 500px;
 }
 
 h1 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--highlight-color);
@@ -44,19 +50,21 @@ h1 {
 #countdown {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 0.5rem;
 }
 
 .time-block {
     background: rgba(255, 255, 255, 0.1);
-    padding: 10px;
+    padding: 0.75rem;
     border-radius: 10px;
-    width: 80px;
+    width: calc(25% - 0.5rem);
+    min-width: 70px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin: 0.25rem;
 }
 
 .time-block span {
-    font-size: 1.7rem;
+    font-size: clamp(1.4rem, 5vw, 1.7rem);
     font-weight: bold;
     color: var(--highlight-color);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -64,8 +72,8 @@ h1 {
 }
 
 .time-block p {
-    margin-top: 6px;
-    font-size: 0.6rem;
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -76,13 +84,15 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    padding-top: 20px;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
 }
 
 .ado img {
-    width: 90px;
-    height: 90px;
+    width: calc(33.33% - 0.5rem);
+    max-width: 100px;
+    height: auto;
+    aspect-ratio: 1/1;
     border-radius: 5px;
     object-fit: cover;
     transition: transform 0.3s ease;
@@ -92,23 +102,35 @@ h1 {
     transform: scale(1.1);
 }
 
-audio{
-    position: absolute;
-    left: 1px;
-    bottom: 1px;
+audio {
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    width: calc(100% - 2rem);
+    max-width: 300px;
 }
 
+/* Media Queries for Enhanced Responsiveness */
 @media (max-width: 480px) {
     .container {
-        width: 95%;
-        padding: 10px;
+        padding: 1rem;
     }
     
     .time-block {
-        width: 60px;
+        width: calc(50% - 0.5rem);
     }
-    
-    .time-block span {
-        font-size: 1.4rem;
+
+    .ado img {
+        width: calc(50% - 0.5rem);
+    }
+    #countdown {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 320px) {
+    .time-block {
+        width: 100%;
+        margin: 0.25rem 0;
     }
 }

@@ -30,23 +30,36 @@ function updateCountdown() {
     COUNTDOWN_ELEMENTS.seconds.textContent = padZero(seconds);
 }
 
-// Optimize performance with requestAnimationFrame
+// Optimize performance with requestAnimationFrame and fallback
 function startCountdown() {
     updateCountdown();
-    requestAnimationFrame(startCountdown);
+    if (window.requestAnimationFrame) {
+        requestAnimationFrame(startCountdown);
+    } else {
+        // Fallback for older browsers
+        setTimeout(startCountdown, 1000);
+    }
 }
 
 let audio = document.getElementById("audio1");
 let isPlaying = false;
 
-document.addEventListener('click', function() {
+// Improved event handling for mobile and desktop
+document.addEventListener('click', function(event) {
+    // Prevent multiple triggering
+    if (event.target === audio) return;
+    
     if (!isPlaying) {
-        audio.play();
+        audio.play().catch(e => {
+            // Handle autoplay restrictions
+            console.log("Autoplay prevented", e);
+        });
         isPlaying = true;
     } else {
         audio.pause();
         isPlaying = false;
     }
 });
+
 // Start countdown
 startCountdown();
