@@ -141,3 +141,26 @@ function init() {
 
 // Call initialization when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', init);
+
+
+// Función para mezclar el orden de las imágenes
+function shuffleImages() {
+    const adoContainer = document.querySelector('.ado');
+    const images = Array.from(adoContainer.children);
+    
+    // Algoritmo Fisher-Yates para mezclar el array
+    for (let i = images.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        adoContainer.appendChild(images[j]);
+    }
+}
+
+// Agregar la función al init existente
+function init() {
+    startCountdown();
+    setupAudioControls();
+    shuffleImages(); // Agregamos la nueva función
+}
+
+// Call initialization when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', init);
