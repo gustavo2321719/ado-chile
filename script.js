@@ -104,6 +104,35 @@ function setupAudioControls() {
     audio.preload = 'auto';
 }
 
+// Obtener el modal
+var modal = document.getElementById("imageModal");
+
+// Obtener la imagen y el elemento modal
+var modalImg = document.getElementById("modalImage");
+
+// Obtener el elemento de cierre
+var span = document.getElementsByClassName("close")[0];
+
+// Añadir evento de clic a todas las imágenes
+document.querySelectorAll('img').forEach(img => {
+  img.onclick = function() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+});
+
+// Cuando el usuario hace clic en <span> (x), cerrar el modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Cuando el usuario hace clic fuera del modal, cerrarlo
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
 // Initialize everything
 function init() {
     startCountdown();
