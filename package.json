@@ -2,7 +2,7 @@
   "name": "mi-react",
   "version": "4444.2.0",
   "private": true,
-  "homepage": "https://gustavo2321719.github.io/ado-chile2",
+  "homepage": "https://gustavo2321719.github.io/ado-chile",
   "dependencies": {
     "cra-template": "1.2.0",
     "date-fns": "^2.29.3",
