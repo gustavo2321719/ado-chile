@@ -1,0 +1,98 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px;
+}
+
+.App-header {
+  background-color: #20232a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.concert-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.concert-item {
+  background-color: #61dafb;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  color: #20232a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.concert-item h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.5em;
+}
+
+.concert-item span {
+  font-size: 1.2em;
+}
+
+.concert-item img {
+  width: 50px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.concert-item button {
+  background-color: #20232a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.concert-item button:hover {
+  background-color: #61dafb;
+  color: #20232a;
+}
+
+/* Media Queries for responsiveness */
+@media (min-width: 600px) {
+  .concert-item {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (min-width: 900px) {
+  .concert-item {
+    width: calc(33.333% - 20px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .concert-item {
+    width: calc(25% - 20px);
+  }
+}
