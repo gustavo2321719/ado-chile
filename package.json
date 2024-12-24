@@ -2,7 +2,7 @@
   "name": "mi-react",
   "version": "4444.2.0",
   "private": true,
-  "homepage": "https://github.com/gustavo2321719.github.io/ado-chile2",
+  "homepage": "https://gustavo2321719.github.io/ado-chile2",
   "dependencies": {
     "cra-template": "1.2.0",
     "date-fns": "^2.29.3",
@@ -13,13 +13,17 @@
     "react-world-flags": "^1.6.0",
     "web-vitals": "^4.2.4"
   },
+
+
+
+  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
