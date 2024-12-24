@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ado-chile/static/css/main.a631c877.css",
+    "main.js": "/ado-chile/static/js/main.0f70762b.js",
+    "static/js/488.45de8f83.chunk.js": "/ado-chile/static/js/488.45de8f83.chunk.js",
+    "index.html": "/ado-chile/index.html",
+    "main.a631c877.css.map": "/ado-chile/static/css/main.a631c877.css.map",
+    "main.0f70762b.js.map": "/ado-chile/static/js/main.0f70762b.js.map",
+    "488.45de8f83.chunk.js.map": "/ado-chile/static/js/488.45de8f83.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a631c877.css",
+    "static/js/main.0f70762b.js"
+  ]
+}
